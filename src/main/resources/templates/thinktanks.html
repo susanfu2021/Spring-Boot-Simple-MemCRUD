@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link href="/css/common.css" rel="stylesheet" />
+</head>
+<body>
+<h1>List all ThinkTanks</h1>
+<div>
+    <h2>
+        <a href="/thinktank/add"> Add ThinkTank</a>
+    </h2>
+    <br />
+    <table border="1">
+        <thead>
+        <tr>
+            <td size="300px">Id</td>
+            <td th:text="#{title}">
+            <td th:text="#{description}">
+            <td th:text="#{edit}">
+            <td th:text="#{delete}">
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="thinktank: ${thinktanks}">
+            <td th:size="300px" th:text="${thinktank.thinkId}"></td>
+            <td th:text="${thinktank.title}"></td>
+            <td th:text="${thinktank.description}"></td>
+            <td><a th:href="@{/thinktank/update/{id}(id=${thinktank.thinkId})}">Update</a></td>
+            <td><a th:href="@{/thinktank/delete/{id}(id=${thinktank.thinkId})}">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h2>
+    <a href="/">Home</a>
+</h2>
+<br>
+<h3 th:text="#{error.message}"></h3>
+</body>
+</html>

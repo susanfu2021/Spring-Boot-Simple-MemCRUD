@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link href="/css/common.css" rel="stylesheet" />
+</head>
+<body>
+<h1>List all ThinkTanks</h1>
+<div>
+    <h2>
+        <a href="/thinktank/add" th:text="#{add}" />
+    </h2>
+
+    <br />
+    <!--
+    <p>Think Id</p>
+    <p>Title</p>
+    <p>Description</p>
+    -->
+    <ul th:each="thinktank: ${thinktanks}">
+        <li th:text="${thinktank.thinkId}"></li>
+        <li th:text="${thinktank.title}"></li>
+        <li th:text="${thinktank.description}"></li>
+    </ul>
+</div>
+<h2>
+    <a href="/" th:text="#{home}" />
+</h2>
+<br>
+<h3 th:text="#{error.message}" />
+</body>
+</html>

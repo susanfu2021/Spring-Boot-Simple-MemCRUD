@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <video width="1400px" height="700px" controls source th:src="@{${'/mp4/' + id + '.mp4'}}" type="video/mp4"/>
+</div>
+<h3>
+<a th:href="@{/music}" th:="#{nextvideo}"></a>
+</h3>
+</body>
+</html>

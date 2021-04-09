@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <img th:src="@{${'/image/' + id + '.jpg'}}"  id="img" width="1600px" height="800px" />
+    <h3>
+        <table>
+            <tr>
+                <a th:href="@{/prev}" th:text="#{previmage}" />
+                &nbsp&nbsp&nbsp&nbsp
+                <a th:href="@{/next}" th:text="#{nextimage}" />
+                &nbsp&nbsp&nbsp&nbsp
+                <a th:href="@{/slide}" th:text="#{slideshow}" />
+            </tr>
+        </table>
+    </h3>
+</body>
+</html>

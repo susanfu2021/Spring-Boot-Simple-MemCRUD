@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+
+   <link href="/css/common.css" rel="stylesheet" />
+</head>
+<body>
+<h1 th:text="#{update}" />
+<form th:object="${thinkTank}" th:action="@{/thinktank/update/{id}(id=${thinkTank.thinkId})}" method="post">
+    <table>
+        <tr>
+            <td th:text="#{title}" />
+            <td><input type="text" required="required" th:field="*{title}" /></td>
+        </tr>
+        <tr>
+            <td th:text="#{description}" />
+            <td><input type="text" required="required" th:field="*{description}" /></td>
+        </tr>
+    </table>
+    <input class="button" type="submit" th:value="#{update}" />
+    <input class="button" type="reset" th:value="#{reset}" />
+</form>
+</body>
+</html>
